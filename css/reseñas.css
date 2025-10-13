@@ -1,0 +1,55 @@
+.reseñas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+  border-radius: 12px;
+  margin: 2rem auto;
+}
+
+.card {
+  background-color: #1a1a1a;
+  border: 2px solid #00ffff40;
+  border-radius: 12px;
+  padding: 3.5rem;
+  color: #f0f0f0;
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 0 10px #00ffff20;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #00ffff;
+  margin-bottom: 1.5rem;
+}
+
+.card p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px #00ffff60;
+}
+
+@media (max-width: 992px) {
+  .reseñas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .reseñas {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+}
