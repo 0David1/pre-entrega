@@ -4,7 +4,7 @@ Incluye secciones de productos, reseñas y contacto, con un diseño moderno y re
 
 Estructura
 
-index.html → Página principal con video y tabla de mensajes.
+index.html → Página principal con video.
 
 /pages/productos.html → Tarjetas de productos creadas con Flexbox.
 
