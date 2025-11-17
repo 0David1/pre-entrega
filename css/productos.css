@@ -27,7 +27,7 @@
   border: 1px solid #E0E0E0;
   border-radius: 12px;
   width: 360px;
-  padding: 20px;
+  padding: 2rem 2rem;
   text-align: left;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -84,4 +84,49 @@
 .tarjeta button:hover {
   background-color: #005BBB;
   transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .tarjeta{
+    width: 280px;
+  }
+}
+
+.escenario {
+    position: relative;
+    bottom: 10px;
+    width: 128%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.sonic {
+    position: absolute;
+    bottom: 10px;
+    width: 80px;
+    animation: correr 12s linear infinite;
+}
+
+@keyframes correr {
+    0% {
+        left: -10%;
+        transform: scaleX(1);
+    }
+    50% {
+        left: 300%;
+        transform: scaleX(1);
+    }
+    50.01% {
+        transform: scaleX(-1);
+    }
+    100% {
+        left: -100%;
+        transform: scaleX(-1); 
+    }
+}
+
+@media (max-width: 600px) {
+  .sonic {
+    animation: correr 8s linear infinite;
+}
 }
