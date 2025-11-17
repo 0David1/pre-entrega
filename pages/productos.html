@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,10 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="reseñas.html">Reseñas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+                <li class="carrito-icon" tabindex="0">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="contador-carrito">0</span>
+                </li>
             </ul>
         </nav>
     </header>
@@ -29,38 +33,14 @@
         <section class="productos">
             <h2>Nuestros Productos</h2>
 
-            <div class="contenedor-productos">
-                <article class="tarjeta">
-                    <img src="../images/producto1.jpg" alt="Auriculares inalámbricos">
-                    <h3>Auriculares Inalámbricos</h3>
-                    <p>Sonido de alta fidelidad con cancelación de ruido y conexión Bluetooth 5.0.</p>
-                    <span class="precio">$49.999</span>
-                    <button><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                </article>
-
-                <article class="tarjeta">
-                    <img src="../images/producto2.jpg" alt="Teclado mecánico RGB">
-                    <h3>Teclado Mecánico RGB</h3>
-                    <p>Switches de alta precisión y retroiluminación personalizable.</p>
-                    <span class="precio">$79.999</span>
-                    <button><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                </article>
-
-                <article class="tarjeta">
-                    <img src="../images/producto3.jpg" alt="Mouse gamer ergonómico">
-                    <h3>Mouse Gamer Ergonómico</h3>
-                    <p>Diseño cómodo con sensor óptico de alta resolución y luces LED.</p>
-                    <span class="precio">$39.999</span>
-                    <button><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-                </article>
-            </div>
+            <div id="contenedor-productos" class="contenedor-productos"></div>
         </section>
     </main>
 
     <!--FOOTER-->
     <footer>
         <p>@2025 TechStore. Todos los derechos reservados.</p>
-        <div class="social-icons">
+        <div class="iconos-sociales">
             <a href="https://facebook.com" target="_blank" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
@@ -75,5 +55,18 @@
             </a>
         </div>
     </footer>
+
+    <div id="panel-carrito">
+        <h3>Carrito</h3>
+        <button id="cerrar-carrito" class="btn-cerrar">X</button>
+        <ul id="carrito-lista"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="../js/carrito.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
 </body>
+
 </html>

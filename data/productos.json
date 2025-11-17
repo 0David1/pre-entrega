@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Auriculares Inalámbricos",
+        "img": "../images/auriculares.jpg",
+        "precio": 49999,
+        "cantidad": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Teclado Mecánico RGB",
+        "img": "../images/teclado.jpg",
+        "precio": 74999,
+        "cantidad": 1
+    },
+    {
+        "id": 3,
+        "nombre": "Mouse Gamer Ergonómico",
+        "img": "../images/mouse.jpg",
+        "precio": 39999,
+        "cantidad": 1
+    }
+]

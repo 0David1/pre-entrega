@@ -25,6 +25,12 @@ body{
 
 /*HEADER*/
 header {
+  position: fixed;
+  top: 0;             /* Pegada a la parte superior */
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +76,7 @@ nav a:hover {
 main {
   width: 80%;
   margin: auto;
-  padding: 4rem 2rem;
+  padding: 12rem 2rem;
 
   flex: 1;
   display: flex;
@@ -112,20 +118,255 @@ footer a:hover {
   color: #005BBB;
 }
 
-.social-icons {
+.iconos-sociales {
   margin-top: 10px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.social-icons a {
+.iconos-sociales a {
   color: #0071E3;
   font-size: 20px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icons a:hover {
+.iconos-sociales a:hover {
   color: #005BBB;
   transform: scale(1.15);
+}
+
+/* CARRITO */
+
+.carrito-icon {
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carrito-icon span {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.carrito-icon i {
+    transition: transform 0.2s ease;
+}
+
+.carrito-icon:hover i {
+    transform: scale(1.15);
+}
+
+#panel-carrito {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+#panel-carrito {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.35s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#panel-carrito.abierto {
+    right: 0;
+}
+
+#panel-carrito h3 {
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+    color: #222;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cerrar:hover {
+    background: #ff1a1a;
+}
+
+#carrito-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#carrito-lista li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 10px;
+}
+
+.total-texto {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    color: #000;
+}
+
+.carrito-nombre {
+    font-size: 14px;
+}
+
+.carrito-precio-unit,
+.carrito-precio-total {
+    font-weight: bold;
+    text-align: right;
+    font-size: 15px;
+} 
+
+.cantidad-controls {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+}
+
+.cantidad-controls button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad-controls button:hover {
+    background: #333;
+}
+
+.btn-eliminar {
+    grid-column: 1/3;
+    background: #ff3333;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-eliminar:hover {
+    background: #cc0000;
+}
+
+
+/* OVERLAY */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 900;
+}
+
+#overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* MENU */
+
+@media (max-width: 600px) {
+    nav ul {
+        display: flex;
+        overflow-x: auto;    
+        white-space: nowrap; 
+        gap: 20px;
+        padding: 10px 0;
+
+        scrollbar-width: none; 
+    }
+
+    nav ul::-webkit-scrollbar { 
+        display: none;        
+    }
+
+    nav ul li {
+        flex: 0 0 auto; 
+    }
+}
+
+/* MENSAJE */
+
+.toast {
+    font-size: 20px !important;
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    padding: 20px 38px;
+    background: #333;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 9999;
+}
+
+.toast.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

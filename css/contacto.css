@@ -18,6 +18,11 @@ form {
   max-width: 60rem;
 }
 
+.msg {
+  padding: 0;
+  color: red;
+}
+
 label {
   font-weight: 500;
 }
@@ -32,7 +37,7 @@ textarea {
   resize: none;
 }
 
-button {
+.submit {
   background-color: #0071E3;
   color: white;
   border: none;
@@ -44,7 +49,7 @@ button {
   margin-top: 2rem;
 }
 
-button:hover {
+.submit:hover {
   background-color: #005BBB;
 }
 
@@ -62,7 +67,7 @@ button:hover {
     font-size: 13px;
   }
 
-  button {
+  .submit {
     font-size: 14px;
     padding: 10px;
   }

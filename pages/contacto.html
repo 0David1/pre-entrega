@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,10 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="reseñas.html">Reseñas</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+                <li class="carrito-icon" tabindex="0">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="contador-carrito">0</span>
+                </li>
             </ul>
         </nav>
     </header>
@@ -27,24 +31,29 @@
     <!--MAIN-->
     <main>
         <h2>Contacto</h2>
-        <form action="https://formspree.io/f/xvgwvzly" method="POST">
+        <form id="form" action="https://formspree.io/f/xvgwvzly" method="POST">
             <label>Nombre</label>
-            <input type="text" name="name" required>
+            <input id="name" type="text" name="name">
+            <p id="messageName" class="msg"></p>
 
             <label>Correo electrónico</label>
-            <input type="email" name="email" required>
+            <input id="email" type="email" name="email">
+            <p id="messageEmail" class="msg"></p>
 
             <label>Mensaje</label>
-            <textarea name="message" required></textarea>
+            <textarea id="message" name="message"></textarea>
+            <p id="messageText" class="msg"></p>
 
-            <button type="submit">Enviar</button>
+            <button class="submit" type="submit">Enviar</button>   
         </form>
+
+        <p id="messageSubmit"></p>
     </main>
 
     <!--FOOTER-->
     <footer>
         <p>@2025 TechStore. Todos los derechos reservados.</p>
-        <div class="social-icons">
+        <div class="iconos-sociales">
             <a href="https://facebook.com" target="_blank" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
@@ -59,6 +68,20 @@
             </a>
         </div>
     </footer>
+
+    <div id="panel-carrito">
+        <h3>Carrito</h3>
+        <button id="cerrar-carrito" class="btn-cerrar">X</button>
+        <ul id="carrito-lista"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+    </div>
+
+    <div id="overlay"></div>
+
+
+    <script src="../js/form.js"></script>
+    <script src="../js/carrito.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
 </body>
 
 </html>
